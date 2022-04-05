@@ -73,4 +73,5 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+  config.hosts << "a19b2e9f61da4a6497feb3a291cd3032.vfs.cloud9.ap-northeast-1.amazonaws.com"
 end

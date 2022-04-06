@@ -1,0 +1,7 @@
+  ja:
+    enums:
+      cat:
+        gender_method:
+          male: "オス"
+          female: "メス"
+          unclear: "不明"

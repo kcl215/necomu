@@ -1,0 +1,22 @@
+<h1>Public::Customers#show</h1>
+<p>Find me in app/views/public/customers/show.html.erb</p>
+<%= image_tag @customer.profile_image, size:'300x300', class: 'profile_image' %>
+<%= current_customer.nickname %>
+<%= current_customer.name %>
+<%= current_customer.introduction %>
+<%= link_to "edit", edit_customer_path(current_customer), class: 'btn btn-secondary ml-5' %>
+
+<!--飼猫一覧-->
+<%= link_to "cat regist", new_cat_path, class: 'btn btn-secondary' %>
+<div class="row">
+  <% @cats.each do |cat| %>
+    <%= link_to cat_path(cat) do %>
+      <%= image_tag cat.cat_image, size: '200x200', class: 'cat_image' %>
+    <% end %>
+  <% end %>
+</div>
+
+<!--投稿一覧-->
+<div class='container'>
+  
+</div>

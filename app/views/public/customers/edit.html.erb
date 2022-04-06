@@ -1,0 +1,9 @@
+<h1>Public::Customers#edit</h1>
+<p>Find me in app/views/public/customers/edit.html.erb</p>
+<%= form_with model: @customer, url: customer_path, method: :patch, lacal: true do |f| %>
+  <%= f.file_field :profile_image, class: "form-control-file user_image", accept: 'image/*' %>
+  <%= f.text_field :nickname %>
+  <%= f.text_area :introduction, class: "form-control introduction" %>
+  <%= f.email_field :email %>
+  <%= f.submit class: 'btn btn-secondary' %>
+<% end %>

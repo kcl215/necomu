@@ -1,0 +1,27 @@
+
+<div class="container">
+  <%= form_with model: @cat, local: true do |f| %>
+
+  <div class="row">
+    <%= f.label :ねこの名前 %>
+    <%= f.text_field :cat_name, class: 'form_control cat_name' %>
+  </div>
+
+  <div class="row">
+    <%= f.label :ねこの写真 %>
+    <%= f.file_field :cat_image, class: 'form_control' %>
+  </div>
+
+  <div class="row">
+    <%= f.label :紹介 %>
+    <%= f.text_area :introduction, class: 'form_control introduction' %>
+  </div>
+
+  <div class="row">
+    <%= f.label :おやつ、餌など %>
+    <%= f.text_area :other, class: 'form_control other' %>
+  </div>
+
+  <%= f.submit "登録", class: 'btn btn-primary' %>
+  <% end %>
+</div>

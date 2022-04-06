@@ -12,6 +12,7 @@
 
   </head>
   <header>
+    <%= link_to "my page", customers_my_page_path, class: "fas-home" %>
     <%= link_to "sign out", destroy_customer_session_path, method: :delete %>
   </header>
 

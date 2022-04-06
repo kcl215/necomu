@@ -8,5 +8,5 @@ class Customer < ApplicationRecord
   has_many :cats, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  has_one_attached :image
+  has_one_attached :profile_image
 end

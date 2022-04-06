@@ -1,6 +1,6 @@
 class Cat < ApplicationRecord
-  
-  belongs_to :cus
-  
-  has_one_attached :image
+
+  belongs_to :customer
+
+  has_one_attached :cat_image
 end

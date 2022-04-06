@@ -18,5 +18,10 @@
 
 <!--投稿一覧-->
 <div class='container'>
-  
+  <% @posts.each do |post| %>
+    <%= link_to post_path(post) do %>
+      <%= image_tag post.image, size: '200x200' %>
+    <% end %>
+    <%= post.caption %>
+  <% end %>
 </div>

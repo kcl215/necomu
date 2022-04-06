@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
 
   belongs_to :customer
-  belongs_to :cat
+  belongs_to :cat, optional: true
   has_many :comments, dependent: :destroy
 
   has_one_attached :image

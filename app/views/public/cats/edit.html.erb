@@ -10,7 +10,17 @@
 
   <div class="row">
     <%= f.label :ねこの写真 %>
-    <%= f.file_field :cat_image, class: 'form_control' %>
+    <%= f.file_field :cat_image, class: 'form_control', accept: 'image/*' %>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 ml-3">
+    <%= f.radio_button :gender, Cat.genders.key(0), checked: "checked" %>
+    <%= f.label :gender, Cat.genders_i18n[:male] %>
+    <%= f.radio_button :gender, Cat.genders.key(1) %>
+    <%= f.label :gender, Cat.genders_i18n[:female] %>
+    <%= f.radio_button :gender, Cat.genders.key(2) %>
+    <%= f.label :gender, Cat.genders_i18n[:unclear] %>
+    </div>
   </div>
 
   <div class="row">

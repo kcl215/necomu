@@ -14,6 +14,10 @@
   <header>
     <%= link_to "my page", customers_my_page_path, class: "fas-home" %>
     <%= link_to "sign out", destroy_customer_session_path, method: :delete %>
+    <%= link_to new_post_path do %>
+      <i class="fas fa-plus"></i>新規投稿
+    <% end %>
+
   </header>
 
   <body>

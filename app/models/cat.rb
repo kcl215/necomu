@@ -4,6 +4,6 @@ class Cat < ApplicationRecord
 
   has_one_attached :cat_image
 
-  enum gender_method: { male: 0, female: 1, unclear:2 }
+  enum gender: { male: 0, female: 1, unclear:2 }
 
 end

@@ -1,11 +1,16 @@
-<h1>Public::Posts#show</h1>
-<p>Find me in app/views/public/posts/show.html.erb</p>
-<%= image_tag @post.image, size: '100%x100%', class: 'post_image' %>
-
-<%= @customer.nickname %>
-<%= @post.caption %>
-
-<%= @customer.name %>
-
-<%= render "public/comments/index", post: @post, comment: @comment %>
-<%= render "public/comments/form", post: @post, comment: @comment %>
+<div class= "container">
+  <div class= "row">
+    <div class= "col">
+      <%= image_tag @post.image.variant( resize: "800x500" ), class: 'post_image' %>
+    </div>
+    <div class = "col">
+      <%= image_tag @customer.profile_image, size: "100x100", class: 'profile_image' %>
+      <%= @customer.nickname %>
+      <%= @post.created_at.strftime('%Y/%m/%d %H:%M') %>
+      <%= @post.caption %>
+      <%= @customer.name %>
+      <%= render "public/comments/index", post: @post, comment: @comment %>
+      <%= render "public/comments/form", post: @post, comment: @comment %>
+    </div>
+  </div>
+</div>

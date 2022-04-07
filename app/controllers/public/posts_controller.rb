@@ -8,7 +8,7 @@ class Public::PostsController < ApplicationController
     @customer = @post.customer
     # コメント機能
     @comment = Comment.new
-    @comments = @post.comments.all
+    @comments = @post.comments.all.order(created_at: :asc)
   end
 
   def new

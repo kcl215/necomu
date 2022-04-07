@@ -3,7 +3,7 @@
     <% post.comments.each do |comment| %>
       <tr>
         <td>
-          <%= image_tag comment.customer.profile_image, size: "100x100" %>
+          <%= image_tag comment.customer.profile_image, size: "50x50", class: "profile_image" %>
           <%= comment.customer.nickname %>
         </td>
         <td>

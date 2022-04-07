@@ -1,10 +1,14 @@
 class Public::PostsController < ApplicationController
   def index
+    @posts = Post.all.order(created_at: :desc)
   end
 
   def show
     @post = Post.find(params[:id])
     @customer = @post.customer
+    # コメント機能
+    @comment = Comment.new
+    @comments = @post.comments.all
   end
 
   def new
@@ -19,6 +23,7 @@ class Public::PostsController < ApplicationController
     else
       render :new
     end
+
   end
 
   private

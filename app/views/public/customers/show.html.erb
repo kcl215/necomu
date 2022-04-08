@@ -5,6 +5,16 @@
 <%= current_customer.name %>
 <%= current_customer.introduction %>
 <%= link_to "edit", edit_customer_path(current_customer), class: 'btn btn-secondary ml-5' %>
+<!--フォロー機能-->
+<div class='row'>
+  <% if current_customer != @customer %>
+    <td><%= render "public/relationships/btn", customer: @customer %></td>
+  <% else %>
+    <%= link_to edit_customer_path(@customer), class: "btn btn-secondary ml-5" do %>
+      <i class="fas fa-user-cog"></i>
+    <% end %>
+  <% end %>
+</div>
 
 <!--飼猫一覧-->
 <%= link_to "cat regist", new_cat_path, class: 'btn btn-secondary' %>

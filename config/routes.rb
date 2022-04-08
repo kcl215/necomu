@@ -11,7 +11,8 @@ Rails.application.routes.draw do
 
   # 会員側
   root to: "public/homes#top"
-  get "customers/my_page" => "public/customers#show"
+  # get "customers/my_page" => "public/customers#show"
+  # get "public/customers#show"
 
 
 
@@ -21,7 +22,11 @@ Rails.application.routes.draw do
       resource :favorites, only: [:create, :destroy]
     end
     resources :cats, only: [:show, :new, :create, :edit, :update]
-    resources :customers, only: [:edit, :update]
+    resources :customers, only: [:show, :edit, :update] do
+      resource :relationships, only: [:create, :destroy]
+    	get 'followings' => 'relationships#followings', as: 'followings'
+    	get 'followers' => 'relationships#followers', as: 'followers'
+    end
   end
 
   namespace :admin do

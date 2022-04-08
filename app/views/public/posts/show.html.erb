@@ -4,7 +4,9 @@
       <%= image_tag @post.image.variant( resize: "800x500" ), class: 'post_image' %>
     </div>
     <div class = "col">
+      <%= link_to(@post.customer) do %>
       <%= image_tag @customer.profile_image, size: "100x100", class: 'profile_image' %>
+      <% end %>
       <%= @customer.nickname %>
       <%= @post.created_at.strftime('%Y/%m/%d %H:%M') %>
       <%= render "public/favorites/btn", post: @post %>

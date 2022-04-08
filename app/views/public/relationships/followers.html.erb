@@ -1,0 +1,7 @@
+<h2>フォロワーリスト</h2>
+
+<% if @customers.exists? %>
+  <%= render 'public/customers/index', customers: @customers %>
+<% else %>
+  <p>ユーザーはいません</p>
+<% end %>

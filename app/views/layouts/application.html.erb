@@ -12,12 +12,32 @@
 
   </head>
   <header>
-    <%= link_to "my page", posts_path, class: "fas-home" %>
-    <%= link_to "sign out", destroy_customer_session_path, method: :delete %>
-    <%= link_to new_post_path do %>
-      <i class="fas fa-plus"></i>新規投稿
+    <nav class="navbar navbar-expand-lg navbar-dark bg-orange">
+    <div class="container">
+      <a class="navbar-brand" href="/"><span>ねこみゅ</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+    <% if customer_signed_in? %>
+      <%= link_to posts_path, class: 'nav-link text-cl' do %>
+        <i class="fas fa-plus"></i>all post
+      <% end %>
+      <%= link_to customer_path(current_customer), class: 'nav-link text-cl'  do %>
+        <i class="fas fa-home"></i>my page
+      <% end %>
+      <%= link_to new_post_path, class: 'nav-link text-cl' do %>
+        <i class="far fa-edit"></i>投稿
+      <% end %>
+      <%= link_to destroy_customer_session_path, class: 'nav-link text-cl', method: :delete do %>
+        <i class="fas fa-sign-out-alt"></i>sign out
+      <% end %>
     <% end %>
-
+       </ul>
+      </div>
+    </div>
+  </nav>
   </header>
 
   <body>

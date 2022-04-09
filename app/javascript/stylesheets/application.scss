@@ -2,6 +2,7 @@
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
 
+
 .profile_image {
  border-radius: 50%;
 }
@@ -21,7 +22,6 @@
 .text-cl:hover, .text-cl:focus {
     color: #5c656d;
 }
-
 
 .navbar-orange {
 
@@ -54,5 +54,9 @@
 }
 
 .card-text {
-  font-size:5px;
+  font-size: 12px;
+}
+
+body {
+  background-image: url("../images/back-w.jpg");
 }

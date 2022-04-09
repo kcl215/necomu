@@ -1,7 +1,10 @@
-<div class='container'>
+  <div class ="wrapper grid" >
   <% @posts.each do |post| %>
+    <div class="card" style="width: 15rem;">
     <%= link_to post_path(post) do %>
-      <%= image_tag post.image, size: '200x200' %>
+      <div class="card-img-top"><%= image_tag post.image, size: '238x238' %></div>
     <% end %>
+    <div class="card-text"><%= post.caption %></div>
+    </div>
   <% end %>
-</div>
+  </div>

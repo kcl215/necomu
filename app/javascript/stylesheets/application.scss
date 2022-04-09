@@ -15,9 +15,44 @@
 }
 
 .text-cl {
-    color: #857c7c !important;
+    color: #857c7c;
 }
 
 .text-cl:hover, .text-cl:focus {
-    color: #5c656d !important;
+    color: #5c656d;
+}
+
+
+.navbar-orange {
+
+}
+
+.font-ex {
+  font-weight:600;
+}
+
+.grid {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin-top: 6%;
+  margin-bottom: 50px;
+}
+
+.card-img-top {
+    object-fit:cover;
+    aspect-ratio: 100/100;
+}
+
+.card{
+  transition: all 0.3s;
+}
+
+.card:hover {
+    -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.card-text {
+  font-size:5px;
 }

@@ -23,6 +23,9 @@ Rails.application.routes.draw do
     end
     resources :cats, only: [:show, :new, :create, :edit, :update]
     resources :customers, only: [:show, :edit, :update] do
+      member do
+        get :favorites
+      end
       resource :relationships, only: [:create, :destroy]
     	get 'followings' => 'relationships#followings', as: 'followings'
     	get 'followers' => 'relationships#followers', as: 'followers'

@@ -1,2 +1,35 @@
-<h1>Admin::Customers#edit</h1>
-<p>Find me in app/views/admin/customers/edit.html.erb</p>
+<div class="container mt-3">
+    <div class="row">
+        <h3 class="p-2 bg-dark text-light">
+            <span class="header">
+                <%= @customer.name %>
+                さんの会員情報編集
+            </span>
+        </h3>
+    </div>
+    <%= form_with model: @customer, url: admin_customer_path, method: :patch, local: true do |f| %>
+        <div class="field row">
+            <div class = "col-2"><%= f.label :会員ID %></div>
+            <div class = "col-5"><%= @customer.id %></div>
+        </div>
+        <div class="field row">
+            <div class = "col-2"><%= f.label :ログインID %></div>
+            <div class = "col-5">
+                <%= f.text_field :name, autofocus: true %>
+            </div>
+        </div>
+        <div class="field row">
+            <div class = "col-2"><%= f.label :名前 %></div>
+            <div class = "col-5">
+                <%= f.text_field :nickname, autofocus: true %>
+            </div>
+        </div>
+        <div class="field row">
+            <div class = "col-2"><%= f.label :メールアドレス %></div>
+            <div class = "col-5"><%= f.email_field :email %></div>
+        </div>
+
+            <%= f.submit "変更を保存", class: 'btn btn-info ml-5' %>
+        </div>
+    <% end %>
+</div>

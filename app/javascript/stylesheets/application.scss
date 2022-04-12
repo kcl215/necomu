@@ -10,9 +10,9 @@
 // border-radius: 50%;
 // }
 
-// .cat_image {
-// border-radius: 50%;
-// }
+.cat_image {
+border-radius: 50%;
+}
 
 .bg-orange {
     background-color: #f4ceb6;
@@ -38,13 +38,13 @@
 //   font-weight:600;
 // }
 
-// .grid {
-//   display: grid;
-//   gap: 26px;
-//   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-//   margin-top: 6%;
-//   margin-bottom: 50px;
-// }
+.grid {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+  margin-top: 6%;
+  margin-bottom: 50px;
+}
 
 // .grid-post {
 //   display: grid;

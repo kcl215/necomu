@@ -32,19 +32,18 @@
 		</div>
 	</div>
 </header>
-<header>
 <div class="container">
-  <div class="profile">
-    <div class="profile_image">
+        <div class="col-12">
+  <div class ="wrapper grid">
+        <a class="cat-regist" href="/cats/new"><%= image_tag 'add.png', size: '100x100', class: "cat_image"%></a>
       <% @cats.each do |cat| %>
         <%= link_to cat_path(cat) do %>
-          <%= image_tag cat.cat_image, size:'150x150', class: 'profile_image' %>
+          <%= image_tag cat.cat_image, size: '100x100', class: 'cat_image' %>
         <% end %>
       <% end %>
     </div>
   </div>
 </div>
-</header>
 
 
 

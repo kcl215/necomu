@@ -13,33 +13,33 @@
   </head>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-orange">
-    <div class="container">
-      <div class="logo_area">
-        <a class="navbar-brand" href="/posts"><%= image_tag 'logo.png', class: "logo" %></a>
+      <div class="container">
+        <div class="logo_area">
+          <a class="navbar-brand" href="/posts"><%= image_tag 'logo.png', class: "logo" %></a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+      <% if customer_signed_in? %>
+        <%= link_to posts_path, class: 'nav-link text-cl' do %>
+          <i class="fas fa-plus"></i>all post
+        <% end %>
+        <%= link_to customer_path(current_customer), class: 'nav-link text-cl'  do %>
+          <i class="fas fa-home"></i>my page
+        <% end %>
+        <%= link_to new_post_path, class: 'nav-link text-cl' do %>
+          <i class="far fa-edit"></i>投稿
+        <% end %>
+        <%= link_to destroy_customer_session_path, class: 'nav-link text-cl', method: :delete do %>
+          <i class="fas fa-sign-out-alt"></i>sign out
+        <% end %>
+      <% end %>
+         </ul>
+        </div>
       </div>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
-    <% if customer_signed_in? %>
-      <%= link_to posts_path, class: 'nav-link text-cl' do %>
-        <i class="fas fa-plus"></i>all post
-      <% end %>
-      <%= link_to customer_path(current_customer), class: 'nav-link text-cl'  do %>
-        <i class="fas fa-home"></i>my page
-      <% end %>
-      <%= link_to new_post_path, class: 'nav-link text-cl' do %>
-        <i class="far fa-edit"></i>投稿
-      <% end %>
-      <%= link_to destroy_customer_session_path, class: 'nav-link text-cl', method: :delete do %>
-        <i class="fas fa-sign-out-alt"></i>sign out
-      <% end %>
-    <% end %>
-       </ul>
-      </div>
-    </div>
-  </nav>
+    </nav>
   </header>
 
   <body>
@@ -47,35 +47,9 @@
   </body>
   
   <footer id="footer">
-  <section class="primary">
-    <p class="logo"><a href="#">COMPANY</a></p>
-    <p class="address">
-      〒100-0005 東京都千代田区丸の内１丁目<br>
-      TEL : 123-456-9999　/　FAX : 123-456-0000
-    </p>
-    <div class="navi-row">
-      <ul class="navi">
-        <li><a href="#">ホーム</a></li>
-        <li><a href="#">選ばれる理由</a></li>
-        <li><a href="#">サービス</a></li>
-        <li><a href="#">制作事例</a></li>
-        <li><a href="#">会社案内</a></li>
-      </ul>
-      <ul class="sns-navi">
-        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-      </ul>
-    </div>
-  </section>
-  <section class="secondary">
-    <ul class="sitenavi">
-      <li><a href="#">サイトマップ</a></li>
-      <li><a href="#">プライバシーポリシー</a></li>
-    </ul>
-    <p class="copyright">Copyright WEBSITE,Inc. All rights reserved.</p>
-  </section>
+    <footer class="py-3 border-top">
+      <div class="container"><p class="m-0 text-center">Copyright &copy; ねこみゅ 2022</p></div>
+    </footer>
 </footer>
 
 </html>

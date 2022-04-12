@@ -1,10 +1,23 @@
-  <div class ="wrapper grid" >
-  <% @posts.each do |post| %>
-    <div class="card" style="width: 15rem;">
-    <%= link_to post_path(post) do %>
-      <div class="card-img-top"><%= image_tag post.image, size: '238x238' %></div>
-    <% end %>
-    <div class="card-text"><%= post.caption %></div>
-    </div>
-  <% end %>
+<div class="container">
+    <div class ="wrapper grid-post">
+      <% @posts.each do |post| %>
+        <div class="card" style="width: 20rem;">
+          <div class="card-header">
+            <%= link_to customer_path(post.customer) do %>
+            投稿者：<%= post.customer.nickname %>
+            <% end %>
+          </div>
+          <%= link_to post_path(post) do %>
+            <div class="card-img-top">
+              <%= image_tag post.image, size: '318x318' %>
+            </div>
+          <% end %>
+          <div class="card-body">
+            <div class="card-text">
+              <%= post.caption %>
+            </div>
+          </div>
+        </div>
+      <% end %>
   </div>
+</div>

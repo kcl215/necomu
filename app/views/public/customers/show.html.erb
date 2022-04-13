@@ -1,11 +1,11 @@
-
+<!--ユーザープロフィール-->
 	<div class="container">
 		<div class="profile">
 			<div class="profile-image">
 				<% if @customer.profile_image.attached? %>
           <%= image_tag @customer.profile_image, size:'150x150', class: 'profile_image' %>
         <% else %>
-          <%= image_tag 'no-image', size: "150x150" %>
+          <%= image_tag 'no-image', size: "150x150", class: 'profile_image' %>
         <% end %>
 			</div>
 			<div class="profile-user-settings">
@@ -32,9 +32,11 @@
 		</div>
 	</div>
 
+<!--飼猫一覧-->
 <div class="container">
-        <div class="col-12">
-  <div class ="wrapper grid">
+  <div class="col-12">
+    <h1>飼猫一覧</h1>
+    <div class ="wrapper grid">
         <a class="cat-regist" href="/cats/new"><%= image_tag 'add.png', size: '100x100', class: "cat_image"%></a>
       <% @cats.each do |cat| %>
         <%= link_to cat_path(cat) do %>
@@ -45,8 +47,7 @@
   </div>
 </div>
 
-
-
+<!--カレントユーザーの投稿一覧-->
 <main>
 	<div class="container">
 		<div class="gallery">

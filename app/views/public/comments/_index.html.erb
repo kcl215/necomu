@@ -3,10 +3,12 @@
     <% post.comments.each do |comment| %>
       <tr>
         <td>
-          <% if comment.customer.profile_image.attached? %>
-            <%= image_tag comment.customer.profile_image, size: "50x50", class: "profile_image" %>
-          <% else %>
-            <%= image_tag 'no-image', size: "50x50", class: 'profile_image' %>
+          <%= link_to customer_path(comment.customer) do %>
+            <% if comment.customer.profile_image.attached? %>
+              <%= image_tag comment.customer.profile_image, size: "50x50", class: "profile_image" %>
+            <% else %>
+              <%= image_tag 'no-image', size: "50x50", class: 'profile_image' %>
+            <% end %>
           <% end %>
             <%= comment.customer.nickname %>
         </td>

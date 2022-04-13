@@ -6,6 +6,8 @@
 //   font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', YuGothic, 'Yu Gothic', sans-serif;
 // }
 
+
+
 .profile_image {
 border-radius: 50%;
 }
@@ -18,7 +20,7 @@ border-radius: 50%;
   -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
-
+// ヘッダー周りのレイアウト
 .bg-orange {
     background-color: #f4ceb6;
 }
@@ -29,6 +31,16 @@ border-radius: 50%;
 
 .text-cl:hover, .text-cl:focus {
     color: #5c656d;
+}
+
+.svg-inline--fa.fa-w-16 {
+    width: 2em;
+    font-size: xx-large;
+}
+
+.svg-inline--fa.fa-w-18 {
+    width: 2em;
+    font-size: xx-large;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -784,3 +796,6 @@ header {
     background-color: #fff;
     box-shadow: 0px 1px 0px 0px rgb(0 0 0 / 10%);
 }
+
+/*========= 検索窓のためのCSS ===============*/
+

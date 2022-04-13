@@ -21,21 +21,25 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav ml-auto">
-      <% if customer_signed_in? %>
-        <%= link_to posts_path, class: 'nav-link text-cl' do %>
-          <i class="fas fa-plus"></i>all post
-        <% end %>
-        <%= link_to customer_path(current_customer), class: 'nav-link text-cl'  do %>
-          <i class="fas fa-home"></i>my page
-        <% end %>
-        <%= link_to new_post_path, class: 'nav-link text-cl' do %>
-          <i class="far fa-edit"></i>投稿
-        <% end %>
-        <%= link_to destroy_customer_session_path, class: 'nav-link text-cl', method: :delete do %>
-          <i class="fas fa-sign-out-alt"></i>sign out
-        <% end %>
-      <% end %>
+          <ul class="navbar-nav ml-auto text-center">
+            <% if customer_signed_in? %>
+              <%= link_to posts_path, class: 'nav-link text-cl' do %>
+                <i class="fas fa-list"></i><div>タイムライン</div>
+              <% end %>
+              <%= link_to new_post_path, class: 'nav-link text-cl' do %>
+                <i class="far fa-edit"></i><div>新規投稿</div>
+              <% end %>
+              <%= link_to destroy_customer_session_path, class: 'nav-link text-cl', method: :delete do %>
+                <i class="fas fa-sign-out-alt"></i><div>ログアウト</div>
+              <% end %>
+              <%= link_to customer_path(current_customer), class: 'nav-link text-cl'  do %>
+                <% if current_customer.profile_image.attached? %>
+                    <%= image_tag current_customer.profile_image, size: "35x35", class: "profile_image" %>
+                  <% else %>
+                    <%= image_tag 'no-image', size: "35x35", class: 'profile_image' %>
+                  <% end %><div>my page</div>
+              <% end %>
+            <% end %>
          </ul>
         </div>
       </div>
@@ -45,7 +49,7 @@
   <body>
     <%= yield %>
   </body>
-  
+
   <footer id="footer">
     <footer class="py-3 border-top">
       <div class="container"><p class="m-0 text-center">Copyright &copy; ねこみゅ 2022</p></div>

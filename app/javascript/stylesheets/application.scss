@@ -39,7 +39,7 @@ border-radius: 50%;
 // }
 
 .grid {
-  display: grid;
+  display: inline-flex;
   gap: 26px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
   margin-top: 6%;
@@ -212,13 +212,13 @@ border-radius: 50%;
 // }
 
 
-// #footer {
-//   position: sticky;
-//   top: 100vh;
-//   width: 100%;
-//   background: #ccdd33;
-//   color: #fff;
-// }
+#footer {
+  position: sticky;
+  top: 100vh;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0px 0px 0px 1px rgb(0 0 0 / 10%);
+}
 // #footer a {
 //   text-decoration: none;
 //   color: #fff;
@@ -771,4 +771,9 @@ Remove or comment-out the code block below to see how the browser will fall-back
             margin: 0;
         }
     }
+}
+
+header {
+    background-color: #fff;
+    box-shadow: 0px 1px 0px 0px rgb(0 0 0 / 10%);
 }

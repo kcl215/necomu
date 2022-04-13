@@ -1,28 +1,31 @@
 
-
+<main>
 <div class="container">
     <div class="row">
-    <h3 class="p-3"><span class="header">投稿一覧</span></h3>
+    <h3 class="p-3"><span class="header">新着投稿</span></h3>
   </div>
-    <div class ="wrapper grid-post">
+  		<div class="gallery">
+
       <% @posts.each do |post| %>
-        <div class="card" style="width: 20rem;">
-          <div class="card-header">
-            <%= link_to customer_path(post.customer) do %>
-            投稿者：<%= post.customer.nickname %>
-            <% end %>
-          </div>
+        <div class="gallery-item" tabindex="0">
           <%= link_to post_path(post) do %>
-            <div class="card-img-top">
-              <%= image_tag post.image, size: '318x318' %>
+           <div class="gallery-image"><%= image_tag post.image, size: '285x285' %>
+              <div class="gallery-item-info">
+                <ul>
+                    <li class="gallery-item-likes text-light">
+                      <span class="visually-hidden">Likes:</span>
+                      <i class="fas fa-heart" aria-hidden="true" style="color: white;"></i><%= post.favorites.count %>
+                    </li>
+                    <li class="gallery-item-comments text-light">
+                      <span class="visually-hidden">Comments:</span>
+                      <i class="fas fa-comment" aria-hidden="true" style="color: white;"></i><%= post.comments.count %>
+                    </li>
+                </ul>
+              </div>
             </div>
           <% end %>
-          <div class="card-body">
-            <div class="card-text">
-              <%= post.caption %>
-            </div>
-          </div>
         </div>
       <% end %>
-  </div>
+      </div>
 </div>
+</main>

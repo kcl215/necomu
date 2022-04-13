@@ -12,6 +12,9 @@
       <%= render "public/favorites/btn", post: @post %>
       <%= @post.caption %>
       <%= @customer.name %>
+                <% if @post.customer == current_customer %>
+            <td><%= link_to 'Destroy', @post, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger" %></td>
+          <% end %>
       <%= render "public/comments/index", post: @post, comment: @comment %>
       <%= render "public/comments/form", post: @post, comment: @comment %>
     </div>

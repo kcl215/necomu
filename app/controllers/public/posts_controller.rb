@@ -1,5 +1,5 @@
 class Public::PostsController < ApplicationController
-  
+
   def index
     @posts = Post.all.order(created_at: :desc)
   end
@@ -24,7 +24,12 @@ class Public::PostsController < ApplicationController
     else
       render :new
     end
+  end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to customer_path(current_customer)
   end
 
   private

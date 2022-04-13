@@ -22,7 +22,6 @@ class Public::CustomersController < ApplicationController
     @favorite_posts = Post.find(favorites)
   end
 
-
   private
 
   def customer_params

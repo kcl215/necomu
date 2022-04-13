@@ -29,7 +29,15 @@
             <div class = "col-2"><%= f.label :メールアドレス %></div>
             <div class = "col-5"><%= f.email_field :email %></div>
         </div>
-
+        <div class="field row">
+            <div class = "col-2"><%= f.label :ステータス %></div>
+            <div class = "col-5">
+                <%= f.radio_button :is_deleted, false %>
+                <%= f.label :is_deleted, '有効', value: true %>
+                <%= f.radio_button :is_deleted, true %>
+                <%= f.label :is_deleted, '退会', value: false %>
+            </div>
+        </div>
             <%= f.submit "変更を保存", class: 'btn btn-info ml-5' %>
         </div>
     <% end %>

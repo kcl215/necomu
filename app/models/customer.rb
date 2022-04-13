@@ -37,9 +37,9 @@ class Customer < ApplicationRecord
     search = "partial_match"
       @customer = Customer.where("name LIKE?","%#{word}%")
   end
-  # def active_for_authentication?
-  #   super && (is_deleted == false)
-  # end
 
+  def active_for_authentication?
+    super && (is_deleted == false)
+  end
 
 end

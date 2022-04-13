@@ -26,11 +26,11 @@
                     <td><%= customer.nickname %></td>
                     <td><%= customer.email %></td>
                     <td>
-                        <% # if customer.is_deleted == false %>
+                        <%  if customer.is_deleted == false %>
                             有効
-                        <% # else %>
+                        <%  else %>
                             退会
-                        <% # end %>
+                        <%  end %>
                     </td>
                 </tr>
                 <% end %>

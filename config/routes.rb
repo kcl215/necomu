@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     resources :cats, only: [:show, :new, :create, :edit, :update]
 
     resources :customers, only: [:show, :edit, :update] do
+      
       member do
         get :favorites
       end

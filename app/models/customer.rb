@@ -32,7 +32,11 @@ class Customer < ApplicationRecord
   def following?(customer)
     followings.include?(customer)
   end
-  
+
+  def self.looks(search, word)
+    search = "partial_match"
+      @customer = Customer.where("name LIKE?","%#{word}%")
+  end
   # def active_for_authentication?
   #   super && (is_deleted == false)
   # end

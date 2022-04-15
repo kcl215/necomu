@@ -114,6 +114,22 @@ border-radius: 50%;
   border: 1px #ddd solid;
 }
 
+.box-cat {
+  width: 350px;
+  height: 590px;
+  margin: 20px;
+  border-radius: 4px;
+  border: 1px #ddd solid;
+}
+
+.box-post {
+  width: 350px;
+  height: 300px;
+  margin: 20px;
+  border-radius: 4px;
+  border: 1px #ddd solid;
+}
+
 .box-inner {
   padding: 20px 26px;
 }
@@ -411,7 +427,7 @@ h1 {
 // マイページ
 
 :root {
-    font-size: 10px;
+    font-size: 13px;
 }
 
 *,
@@ -621,7 +637,7 @@ img {
     width: 285px;
     height: 285px;
     background-color: rgba(0, 0, 0, 0.3);
-}
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);}
 
 .gallery-item-info {
     display: none;
@@ -792,7 +808,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
     .gallery-item,
     .gallery {
         width: auto;
-        margin: 0;
+        margin: auto;
     }
 
     @media (max-width: 40rem) {

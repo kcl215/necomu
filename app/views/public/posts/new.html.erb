@@ -1,18 +1,23 @@
-<h1>Public::Posts#new</h1>
-<p>Find me in app/views/public/posts/new.html.erb</p>
-<div class="container">
+<div class="box-post">
   <%= form_with model: @post, local: true do |f| %>
+  <div class="box-inner">
+    <h1>写真の投稿</h1>
 
-    <div class="row">
-      <%= f.label :写真 %>
+    <div class="box-name">
+      <div class="column-left">
+        <%= f.label :写真 %>
+      </div>
       <%= f.file_field :image, class: 'form_control', accept: 'image/*'  %>
     </div>
-  
-    <div class="row">
-      <%= f.label :投稿文 %>
-      <%= f.text_area :caption, class: 'form_control caption' %>
+
+    <div class="box-name">
+      <div class="column-left">
+        <%= f.label :投稿文 %>
+      </div>
+      <%= f.text_area :caption, style: "width: 300px; height: 100px", class: 'form_control caption' %>
     </div>
-  
-    <%= f.submit "登録", class: 'btn btn-primary' %>
+
+    <%= f.submit "投稿", class: 'btn btn-success' %>
   <% end %>
+  </div>
 </div>

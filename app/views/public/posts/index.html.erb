@@ -1,31 +1,29 @@
-
 <main>
-<div class="container">
+  <div class="container">
     <div class="row">
-    <h3 class="p-3"><span class="header">新着投稿</span></h3>
-  </div>
-  		<div class="gallery">
-
+      <h3 class="p-3"><span class="header">新着投稿</span></h3>
+    </div>
+    <div class="gallery">
       <% @posts.each do |post| %>
         <div class="gallery-item" tabindex="0">
           <%= link_to post_path(post) do %>
-           <div class="gallery-image"><%= image_tag post.image, size: '285x285' %>
+            <div class="gallery-image"><%= image_tag post.image, size: '285x285' %>
               <div class="gallery-item-info">
                 <ul>
-                    <li class="gallery-item-likes text-light">
-                      <span class="visually-hidden">Likes:</span>
-                      <i class="fas fa-heart" aria-hidden="true" style="color: white;"></i><%= post.favorites.count %>
-                    </li>
-                    <li class="gallery-item-comments text-light">
-                      <span class="visually-hidden">Comments:</span>
-                      <i class="fas fa-comment" aria-hidden="true" style="color: white;"></i><%= post.comments.count %>
-                    </li>
+                  <li class="gallery-item-likes text-light">
+                    <span class="visually-hidden">Likes:</span>
+                    <i class="fas fa-heart" aria-hidden="true" style="color: white;"></i><%= post.favorites.count %>
+                  </li>
+                  <li class="gallery-item-comments text-light">
+                    <span class="visually-hidden">Comments:</span>
+                    <i class="fas fa-comment" aria-hidden="true" style="color: white;"></i><%= post.comments.count %>
+                  </li>
                 </ul>
               </div>
             </div>
           <% end %>
         </div>
       <% end %>
-      </div>
-</div>
+    </div>
+  </div>
 </main>

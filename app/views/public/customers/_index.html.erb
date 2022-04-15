@@ -10,8 +10,13 @@
   <tbody>
     <% customers.each do |customer| %>
       <tr>
-        <td><%= link_to customer_path(customer) do %>
-          <%= image_tag customer.profile_image, class: "profile_image", size: "100x100" %>
+        <td>
+          <%= link_to customer_path(customer) do %>
+            <% if customer.profile_image.attached? %>
+              <%= image_tag customer.profile_image, class: "profile_image", size: "100x100" %>
+            <% else %>
+              <%= image_tag 'no-image.png', size: "100x100", class: 'profile_image' %>
+            <% end %>
         <% end %></td>
         <td><%= customer.nickname %></td>
         <td><%= customer.name %></td>

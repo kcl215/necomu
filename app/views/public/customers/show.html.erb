@@ -9,7 +9,7 @@
         <% end %>
 			</div>
 			<div class="profile-user-settings">
-				<h1 class="profile-user-name"><%= current_customer.name %></h1>
+				<h1 class="profile-user-name"><%= @customer.name %></h1>
           <% if current_customer != @customer %>
             <%= render "public/relationships/btn", customer: @customer %>
           <% else %>

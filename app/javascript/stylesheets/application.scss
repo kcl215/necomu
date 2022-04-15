@@ -6,7 +6,9 @@
 //   font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', YuGothic, 'Yu Gothic', sans-serif;
 // }
 
-
+.nav-profile_image {
+  margin-left: 7px;
+}
 
 .profile_image {
 border-radius: 50%;
@@ -55,7 +57,7 @@ border-radius: 50%;
   display: inline-flex;
   gap: 26px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
-  margin-top: 6%;
+  margin-top: 2%;
   margin-bottom: 50px;
 }
 
@@ -423,7 +425,7 @@ body {
     min-height: 100vh;
     background-color: #fafafa;
     color: #262626;
-    padding-bottom: 3rem;
+    padding-bottom: 0rem;
 }
 
 img {
@@ -495,6 +497,43 @@ img {
 //     border-radius: 50%;
 // }
 
+.searche-form {
+  width: 200px;
+  height: 30px;
+}
+
+/*========= 検索窓のためのCSS ===============*/
+
+/*検索窓のエリア*/
+ #search-wrap {
+     position: absolute;/*絶対配置にして*/
+   z-index: 2;/*最前面に設定。数字は変更可*/
+   top:10px;
+   right:10px;
+}
+
+/*テキスト入力input設定*/
+ #search-text{
+  -webkit-appearance:none;/*SafariやChromeのデフォルトの設定を無効*/
+  width: 60px;/*テキスト入力エリアが伸びる前の横幅*/
+  height: 60px;
+    padding: 20px;
+  border: none;
+  background:#fff url("https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/7-2-3/img/icon_search.svg") no-repeat 17px center;/*虫眼鏡アイコンを背景に表示*/
+  background-size: 25px 25px;
+  transition: all 0.5s;/*transitionを使ってスムースに伸ばす*/
+  outline: none;
+  cursor: pointer;/*カーソルを指マークに*/
+}
+
+/*テキスト入力inputにフォーカスした時の形状*/
+ #search-text:focus {
+  width: 250px;/*テキスト入力エリアが伸びる後の横幅*/
+  padding: 20px 0 20px 60px;
+  box-shadow: 0 2px rgba(6,0,1,.26);
+}
+
+
 .profile-user-settings,
 .profile-stats,
 .profile-bio {
@@ -518,11 +557,11 @@ img {
     border: 0.1rem solid #dbdbdb;
     border-radius: 0.3rem;
     padding: 0 2.4rem;
-    margin-left: 2rem;
+    margin-left: 20rem;
 }
 
 .profile-settings-btn {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-left: 1rem;
 }
 

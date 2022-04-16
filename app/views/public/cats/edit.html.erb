@@ -1,38 +1,55 @@
-<h1>Public::Cats#edit</h1>
-<p>Find me in app/views/public/cats/edit.html.erb</p>
-<div class="container">
-  <%= form_with model: @cat, local: true do |f| %>
+<div class="box-cat">
 
-  <div class="row">
-    <%= f.label :ねこの名前 %>
-    <%= f.text_field :cat_name, class: 'form_control cat_name' %>
-  </div>
+  <div class="box-inner">
+    <h1>ねこちゃんの情報編集</h1>
+    <%= form_with model: @cat, local: true do |f| %>
+      <div class="box-name">
+        <div class="column-left">
+          <%= f.label :ねこの名前, class: 'form-label' %>
+        </div>
+          <%= f.text_field :cat_name, class: 'form_control cat_name' %>
+      </div>
 
-  <div class="row">
-    <%= f.label :ねこの写真 %>
-    <%= f.file_field :cat_image, class: 'form_control', accept: 'image/*' %>
-  </div>
-  <div class="row">
-    <div class="col-sm-4 ml-3">
-    <%= f.radio_button :gender, Cat.genders.key(0), checked: "checked" %>
-    <%= f.label :gender, Cat.genders_i18n[:male] %>
-    <%= f.radio_button :gender, Cat.genders.key(1) %>
-    <%= f.label :gender, Cat.genders_i18n[:female] %>
-    <%= f.radio_button :gender, Cat.genders.key(2) %>
-    <%= f.label :gender, Cat.genders_i18n[:unclear] %>
-    </div>
-  </div>
+      <div class="box-name">
+        <div class="column-left">
+          <%= f.label :ねこの写真, class: 'form-label' %>
+        </div>
+        <%= f.file_field :cat_image, class: 'form_control', accept: 'image/*'  %>
+      </div>
 
-  <div class="row">
-    <%= f.label :紹介 %>
-    <%= f.text_area :introduction, class: 'form_control introduction' %>
-  </div>
+      <div class="box-name">
+        <div class="column-left md-3">
+          <%= f.label :性別, class: 'form-label' %>
+        </div>
+        <div class= "ml-5">
+        <%= f.radio_button :gender, Cat.genders.key(0), checked: "checked" %>
+        <%= f.label :gender, Cat.genders_i18n[:male] %>
+        <%= f.radio_button :gender, Cat.genders.key(1) %>
+        <%= f.label :gender, Cat.genders_i18n[:female] %>
+        <%= f.radio_button :gender, Cat.genders.key(2) %>
+        <%= f.label :gender, Cat.genders_i18n[:unclear] %>
+        </div>
+      </div>
 
-  <div class="row">
-    <%= f.label :おやつ、餌など %>
-    <%= f.text_area :other, class: 'form_control other' %>
-  </div>
+      <div class="box-name">
+        <div class="column-left">
+          <%= f.label :紹介, class: 'form-label' %>
+        </div>
+          <%= f.text_area :introduction, style: "width: 300px; height: 100px", class: 'form_control introduction' %>
+      </div>
 
-  <%= f.submit "登録", class: 'btn btn-primary' %>
-  <% end %>
+      <div class="box-name">
+        <div class="column-left">
+          <%= f.label :おやつ、餌など, class: 'form-label' %>
+        </div>
+        <div class='md-3'>
+        <%= f.text_area :other, style: "width: 300px; height: 100px", class: 'form_control other' %>
+        </div>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "更新", class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
 </div>

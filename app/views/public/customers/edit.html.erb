@@ -1,8 +1,38 @@
+<div class="box-cat">
+  <div class="box-inner">
+    <h1>ユーザー編集</h1>
+    <%= form_with model: @customer, url: customer_path, method: :patch, lacal: true do |f| %>
+      <div class="box-name">
+        <div class="column-left">
+          <%= f.label :プロフィール写真, class: 'form-label' %>
+        </div>
+          <%= f.file_field :profile_image, class: "form-control-file user_image", accept: 'image/*' %>
+      </div>
 
-<%= form_with model: @customer, url: customer_path, method: :patch, lacal: true do |f| %>
-  <%= f.file_field :profile_image, class: "form-control-file user_image", accept: 'image/*' %>
-  <%= f.text_field :nickname %>
-  <%= f.text_area :introduction, class: "form-control introduction" %>
-  <%= f.email_field :email %>
-  <%= f.submit class: 'btn btn-secondary' %>
-<% end %>
+      <div class="box-name">
+        <div class="column-left">
+          <%= f.label :名前 %>
+        </div>
+        <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
+      </div>
+
+      <div class="box-email">
+        <div class="column-left">
+          <%= f.label :メールアドレス %>
+        </div>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="box-name">
+        <div class="column-left">
+          <%= f.label :紹介, class: 'form-label' %>
+        </div>
+          <%= f.text_area :introduction, style: "width: 300px; height: 100px", class: 'form_control introduction' %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "更新", class: "btn btn-success" %>
+      </div>
+    <% end %>
+  </div>
+</div>

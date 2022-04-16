@@ -45,14 +45,6 @@ border-radius: 50%;
   color: #857c7c;
 }
 
-// .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
-//   color: #5c656d;
-// }
-
-// .font-ex {
-//   font-weight:600;
-// }
-
 .grid {
   display: inline-flex;
   gap: 26px;
@@ -60,32 +52,6 @@ border-radius: 50%;
   margin-top: 2%;
   margin-bottom: 50px;
 }
-
-// .grid-post {
-//   display: grid;
-//   gap: 26px;
-//   grid-template-columns: 1fr 1fr 1fr;
-//   margin-top: 6%;
-//   margin-bottom: 50px;
-// }
-
-// .card-img-top {
-//     object-fit:cover;
-//     aspect-ratio: 100/100;
-// }
-
-// .card{
-//   transition: all 0.3s;
-// }
-
-// .card:hover {
-//     -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
-//           box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
-// }
-
-// .card-text {
-//   font-size: 12px;
-// }
 
 .bg {
   width: 100%;
@@ -166,12 +132,6 @@ border-radius: 50%;
   margin-bottom: 30px;
 }
 
-
-// * {
-//   margin: 0px;
-//   padding: 0px;
-//   text-decoration: none;
-// }
 
 // =======devise画面=================
 .box {
@@ -320,7 +280,7 @@ h1 {
   background: #e7e9ec;
 }
 // ==============================
-
+// フッター固定
 #footer {
   position: sticky;
   top: 100vh;
@@ -328,178 +288,7 @@ h1 {
   background: #fff;
   box-shadow: 0px 0px 0px 1px rgb(0 0 0 / 10%);
 }
-// #footer a {
-//   text-decoration: none;
-//   color: #fff;
-// }
-// #footer a:hover {
-//   text-decoration: underline;
-// }
-// #footer .primary {
-//   padding: 40px 20px;
-//   background: #333;
-// }
-// #footer .secondary {
-//   display: flex;
-//   padding: 40px 20px;
-//   background: #222;
-// }
-
-// @media screen and (max-width: 767px) {
-//   #footer .primary {
-//     padding: 20px 20px;
-//     background: #333;
-//   }
-//   #footer .secondary {
-//     display: block;
-//     padding: 20px 20px;
-//   }
-// }
-
-// /* footer-logo */
-
-// #footer .logo {
-//   position: relative;
-//   padding: 0;
-//   margin: 0;
-//   width: 100%;
-//   font-size: 26px;
-//   font-weight: bold;
-// }
-// @media screen and (max-width: 767px) {
-//   #footer .logo {
-//     font-size: 16px;
-//   }
-// }
-
-// /* address */
-
-// .address {
-//   margin: 10px 0 0;
-//   padding: 0;
-// }
-
-// @media screen and (max-width: 767px) {
-//   .address {
-//     font-size: 12px;
-//   }
-// }
-
-// /* navi */
-
-// .navi-row {
-//   display: flex;
-//   margin-top: 40px;
-// }
-// #footer .navi {
-//   margin: 0;
-//   padding: 0;
-//   list-style: none;
-// }
-// #footer .navi li {
-//   display: inline-block;
-//   margin: 0 20px 0 0;
-//   padding: 0;
-// }
-// #footer .navi li:first-child {
-//   margin-left: 0;
-// }
-
-// @media screen and (max-width: 767px) {
-//   .navi-row {
-//     display: block;
-//     margin-top: 15px;
-//   }
-//   #footer .navi {
-//     font-size: 12px;
-//   }
-//   #footer .navi li {
-//     margin-top: 5px;
-//     font-size: 12px;
-//   }
-// }
-
-// /* sns-navi */
-
-// #footer .sns-navi {
-//   margin: 0 0 0 auto;
-//   padding: 0;
-// }
-// #footer .sns-navi li {
-//   display: inline-block;
-//   margin: 0 20px 0 0;
-//   padding: 0;
-//   font-size: 20px;
-// }
-// #footer .sns-navi li:last-child {
-//   margin-right: 0;
-// }
-
-// @media screen and (max-width: 767px) {
-//   #footer .sns-navi {
-//     margin: 20px 0 0;
-//     padding: 0;
-//   }
-//   #footer .sns-navi li {
-//     margin: 0 20px 0 0;
-//     padding: 0;
-//     font-size: 18px;
-//   }
-// }
-
-// /* sitenavi */
-
-// #footer .sitenavi {
-//   width: 50%;
-//   margin: 0;
-//   padding: 0;
-//   list-style: none;
-// }
-// #footer .sitenavi li {
-//   display: inline-block;
-//   margin: 0 0 0 20px;
-//   padding: 0;
-// }
-// #footer .sitenavi li:first-child {
-//   margin-left: 0;
-// }
-
-// @media screen and (max-width: 767px) {
-//   #footer .sitenavi {
-//     width: 100%;
-//     text-align: center;
-//     font-size: 12px;
-//   }
-// }
-
-// /* copyright */
-
-// #footer .copyright {
-//   width: 50%;
-//   margin: 0;
-//   padding: 0;
-//   text-align: right;
-// }
-// @media screen and (max-width: 767px) {
-//   #footer .copyright {
-//     width: 100%;
-//     margin: 20px 0 0;
-//     text-align: center;
-//     font-size: 12px;
-//   }
-// }
-
-
-// html {
-//   height: 100%;
-// }
-// body {
-//   margin: 0;
-//   padding: 0;
-//   height: 100%;
-// }
-
-
+// ==============================
 // マイページ
 
 :root {
@@ -529,20 +318,6 @@ img {
     margin: 0 auto;
     padding: 0 2rem;
 }
-
-// .btn {
-//     display: inline-block;
-//     font: inherit;
-//     background: none;
-//     border: none;
-//     color: inherit;
-//     padding: 0;
-//     cursor: pointer;
-// }
-
-// .btn:focus {
-//     outline: 0.5rem auto #4d90fe;
-// }
 
 .visually-hidden {
     position: absolute !important;
@@ -591,17 +366,6 @@ img {
     border-radius: 50%;
 }
 
-// .cat-image {
-//     float: left;
-//     width: calc(33.333% - 1rem);
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     margin-right: 3rem;
-// }
-// .cat-image img {
-//     border-radius: 50%;
-// }
 
 .searche-form {
   width: 200px;
@@ -938,5 +702,5 @@ header {
     box-shadow: 0px 1px 0px 0px rgb(0 0 0 / 10%);
 }
 
-/*========= 検索窓のためのCSS ===============*/
+
 

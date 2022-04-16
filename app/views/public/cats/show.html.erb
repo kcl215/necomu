@@ -7,7 +7,7 @@
 		<div class="profile-user-settings">
 			<h1 class="profile-user-name"><%= @cat.cat_name %></h1>
 			<% if @cat.customer == current_customer %>
-        <%= link_to "edit", edit_cat_path(@cat), class: 'btn btn-secondary' %>
+        <%= link_to "編集", edit_cat_path(@cat), class: 'btn btn-secondary' %>
       <% end %>
 		</div>
 		<div class="profile-bio">

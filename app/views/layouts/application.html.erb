@@ -9,51 +9,47 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!--fontawesome-->
     <script src="https://kit.fontawesome.com/9f57df5a0b.js" crossorigin="anonymous"></script>
-
   </head>
-  <header>
-    <nav class="navbar navbar-expand-lg ">
-        <div class="logo_area">
-          <a class="navbar-brand" href="/posts"><%= image_tag 'logo1.png', size: "214x60", class: "logo" %></a>
-        </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-
-          <ul class="navbar-nav ml-auto text-center">
-                      <div class="d-flex justify-content-center form-inline">
-          <%= render 'public/searches/form' %>
-
-        </div>
-            <% if customer_signed_in? %>
-              <%= link_to posts_path, class: 'nav-link text-cl' do %>
-                <i class="fas fa-list nav-fa"></i><div>タイムライン</div>
-              <% end %>
-              <%= link_to new_post_path, class: 'nav-link text-cl' do %>
-                <i class="far fa-edit nav-fa"></i><div>新規投稿</div>
-              <% end %>
-              <%= link_to destroy_customer_session_path, class: 'nav-link text-cl', method: :delete do %>
-                <i class="fas fa-sign-out-alt nav-fa"></i><div>ログアウト</div>
-              <% end %>
-                <%= link_to customer_path(current_customer), class: 'nav-link text-cl'  do %>
-                  <% if current_customer.profile_image.attached? %>
-                      <%= image_tag current_customer.profile_image, size: "35x35", class: "profile_image nav-profile_image" %>
-                    <% else %>
-                      <%= image_tag 'no-image.png', size: "35x35", class: 'profile_image nav-profile_image' %>
+    <% unless current_page?(root_path) %>
+      <header>
+        <nav class="navbar navbar-expand-lg ">
+            <div class="logo_area">
+              <a class="navbar-brand" href="/"><%= image_tag 'logo1.png', size: "214x60", class: "logo" %></a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav ml-auto text-center">
+                <div class="d-flex justify-content-center form-inline">
+                  <%= render 'public/searches/form' %>
+                </div>
+                <% if customer_signed_in? %>
+                  <%= link_to posts_path, class: 'nav-link text-cl' do %>
+                    <i class="fas fa-list nav-fa"></i><div>タイムライン</div>
                   <% end %>
-                <div>マイページ</div>
-              <% end %>
-            <% end %>
-         </ul>
-        </div>
-    </nav>
-
-
-  </header>
+                  <%= link_to new_post_path, class: 'nav-link text-cl' do %>
+                    <i class="far fa-edit nav-fa"></i><div>新規投稿</div>
+                  <% end %>
+                  <%= link_to destroy_customer_session_path, class: 'nav-link text-cl', method: :delete do %>
+                    <i class="fas fa-sign-out-alt nav-fa"></i><div>ログアウト</div>
+                  <% end %>
+                    <%= link_to customer_path(current_customer), class: 'nav-link text-cl'  do %>
+                      <% if current_customer.profile_image.attached? %>
+                          <%= image_tag current_customer.profile_image, size: "35x35", class: "profile_image nav-profile_image" %>
+                        <% else %>
+                          <%= image_tag 'no-image.png', size: "35x35", class: 'profile_image nav-profile_image' %>
+                      <% end %>
+                      <div>マイページ</div>
+                    <% end %>
+                <% end %>
+             </ul>
+          </div>
+        </nav>
+      </header>
+    <% end %>
 
   <body>
-
     <%= yield %>
   </body>
 
@@ -61,6 +57,6 @@
     <footer class="py-3 border-top">
       <div class="container"><p class="m-0 text-center">Copyright &copy; ねこみゅ 2022</p></div>
     </footer>
-</footer>
+  </footer>
 
 </html>

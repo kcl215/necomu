@@ -1,5 +1,18 @@
-<h1>ねこみゅへようこそ</h1>
-<p>初めての方はこちら</p>
-<%= link_to "sign up", new_customer_registration_path, class:"link" %>
-<p>会員登録がお済みの方はこちら</p>
-<%= link_to "sign in", new_customer_session_path, class:"link" %>
+<div class="bg">
+  <div class="asign">
+    <div class="cont">
+      <div class="col">
+        <h1 class="h1 pb-4"><%= image_tag 'logo.png', size: "", class: "logo" %>ねこみゅへようこそ</h1>
+      </div>
+
+      <div class="col h3">
+        <p>初めての方はこちら</p>
+        <%= link_to "sign up", new_customer_registration_path, class:"btn-ex link" %>
+      </div>
+      <div class="col h3">
+        <p>会員登録がお済みの方はこちら</p>
+        <%= link_to "sign in", new_customer_session_path, class:"btn-ex" %>
+      </div>
+    </div>
+  </div>
+</div>

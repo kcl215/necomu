@@ -3,6 +3,7 @@
     <% post.comments.each do |comment| %>
       <tr>
         <td class="text-center">
+
           <%= link_to customer_path(comment.customer) do %>
             <% if comment.customer.profile_image.attached? %>
               <%= image_tag comment.customer.profile_image, size: "50x50", class: "profile_image" %>
@@ -12,10 +13,10 @@
           <% end %>
             <%= comment.customer.nickname %>
         </td>
-        <td>
+        <td class="pl-3">
           <%= comment.text %>
         </td>
-        <td>
+        <td class="pl-5">
           <% if comment.customer == current_customer %>
             <%= link_to "delete", post_comment_path(post, comment), method: :delete, remote: true, class: "btn btn-danger" %>
           <% end %>

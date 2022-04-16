@@ -482,6 +482,20 @@ img {
     padding: 5rem 0;
 }
 
+.post-profile {
+    padding: 1rem 0;
+}
+
+.box-comment {
+  width: 460px;
+  height: 450px;
+  border-radius: 4px;
+  border: 1px #ddd solid;
+  overflow-y: auto;
+
+}
+
+
 .profile::after {
     content: "";
     display: block;

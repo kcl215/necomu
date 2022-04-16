@@ -1,27 +1,43 @@
 <div class= "container">
-  <div class= "row">
-    <div class= "col">
-      <%= image_tag @post.image.variant( resize: "800x500" ), class: 'post_image' %>
+  <div class= "row mt-5">
+    <div class= "col-7">
+      <%= image_tag @post.image.variant( resize: "690x500" ), class: 'post_image' %>
     </div>
-    <div class = "col">
-      <%= link_to(@post.customer) do %>
-        <% if @customer.profile_image.attached? %>
-          <%= image_tag @customer.profile_image, size: "100x100", class: 'profile_image' %>
-        <% else %>
-          <%= image_tag 'no-image', size: "100x100", class: 'profile_image' %>
-        <% end %>
-      <% end %>
-
-      <div><%= @customer.nickname %></div>
-      <%= @post.created_at.strftime('%Y/%m/%d %H:%M') %>
-      <%= render "public/favorites/btn", post: @post %>
-      <%= @post.caption %>
-      <%= @customer.name %>
-        <% if @post.customer == current_customer %>
-          <td><%= link_to 'Destroy', @post, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger" %></td>
-        <% end %>
-      <%= render "public/comments/index", post: @post, comment: @comment %>
+    <div class = "col-5">
+      <div class="post-profile">
+  			<div class="profile-image">
+          <%= link_to(@post.customer) do %>
+            <% if @customer.profile_image.attached? %>
+              <%= image_tag @customer.profile_image, size: "100x100", class: 'profile_image' %>
+            <% else %>
+              <%= image_tag 'no-image', size: "100x100", class: 'profile_image' %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="profile-user-settings">
+          <h3 class="profile-user-name"><%= @customer.nickname %></h3>
+          <span class="text-gray"><%= @customer.name %></span>
+        </div>
+        <div class="profile-bio">
+          <p><div class="profile-real-name">
+            <%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></div>
+            <div>
+              <%= render "public/favorites/btn", post: @post %>
+              <% if @post.customer == current_customer %>
+                <%= link_to 'Destroy', @post, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger" %>
+              <% end %>
+            </div>
+            <p style="white-space:pre-wrap;"><%= @post.caption %></p>
+          </p>
+        </div>
+      </div>
+        <!--コメント機能-->
+      <div class="box-comment">
+        <%= render "public/comments/index", post: @post, comment: @comment %>
+      </div>
+      <div class="form">
       <%= render "public/comments/form", post: @post, comment: @comment %>
+      </div>
     </div>
   </div>
 </div>

@@ -1,4 +1,5 @@
 class Public::CatsController < ApplicationController
+  before_action :authenticate_customer!
   def show
     @cat = Cat.find(params[:id])
   end

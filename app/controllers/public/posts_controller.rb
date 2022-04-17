@@ -1,5 +1,5 @@
 class Public::PostsController < ApplicationController
-
+before_action :authenticate_customer!
   def index
     @posts = Post.order(created_at: :desc).page(params[:page])
   end

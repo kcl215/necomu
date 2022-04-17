@@ -1,7 +1,11 @@
 <div class= "container">
   <div class= "row mt-5">
     <div class= "col-7">
-      <%= image_tag @post.image.variant( resize: "690x500" ), class: 'post_image' %>
+      <% if @post.image.attached? %>
+        <%= image_tag @post.image.variant( resize: "690x500" ), class: 'post_image' %>
+      <% else %>
+        <%= image_tag 'post-no-image.png', size: '285x285' %>
+      <% end %>  
     </div>
     <div class = "col-5">
       <div class="post-profile">

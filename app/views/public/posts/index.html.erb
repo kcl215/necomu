@@ -7,7 +7,12 @@
       <% @posts.each do |post| %>
         <div class="gallery-item" tabindex="0">
           <%= link_to post_path(post) do %>
-            <div class="gallery-image"><%= image_tag post.image, size: '285x285' %>
+            <div class="gallery-image">
+              <% if post.image.attached? %>
+                <%= image_tag post.image, size: '285x285' %>
+              <% else %>
+                <%= image_tag 'post-no-image.png', size: '285x285' %>
+              <% end %>
               <div class="gallery-item-info">
                 <ul>
                   <li class="gallery-item-likes text-light">

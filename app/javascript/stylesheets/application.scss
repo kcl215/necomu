@@ -2,10 +2,6 @@
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
 
-// body {
-//   font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', YuGothic, 'Yu Gothic', sans-serif;
-// }
-
 .nav-profile_image {
   margin-left: 7px;
 }
@@ -635,14 +631,6 @@ img {
         transform: rotate(360deg);
     }
 }
-
-/*
-
-The following code will only run if your browser supports CSS grid.
-
-Remove or comment-out the code block below to see how the browser will fall-back to flexbox & floated styling.
-
-*/
 
 @supports (display: grid) {
     .profile {

@@ -11,8 +11,11 @@ class Public::CatsController < ApplicationController
   def create
     @cat = Cat.new(cat_params)
     @cat.customer_id = current_customer.id
-    @cat.save
-    redirect_to cat_path(@cat)
+    if @cat.save
+      redirect_to cat_path(@cat)
+    else
+      render:new
+    end
   end
 
   def edit
@@ -21,8 +24,11 @@ class Public::CatsController < ApplicationController
 
   def update
     @cat = Cat.find(params[:id])
-    @cat.update(cat_params)
-    redirect_to cat_path(@cat)
+    if  @cat.update(cat_params)
+        redirect_to cat_path(@cat)
+    else
+        render:edit
+    end
   end
 
   private

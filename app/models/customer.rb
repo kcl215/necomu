@@ -21,6 +21,10 @@ class Customer < ApplicationRecord
 
   has_one_attached :profile_image
 
+  validates :nickname,presence:true
+  validates :name, format: {with: /\A[a-z0-9]+\z/i, message: "半角英数字で入力してください" }
+  validates :introduction,length:{maximum:200}
+
   def follow(customer)
     relationships.create(followed_id: customer.id)
   end

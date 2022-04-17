@@ -3,7 +3,7 @@
 		<div class="profile">
 			<div class="profile-image">
 				<% if @customer.profile_image.attached? %>
-          <%= image_tag @customer.profile_image, size:'150x150', class: 'profile_image' %>
+          <%= image_tag @customer.profile_image, size: '150x150', class: 'profile_image' %>
         <% else %>
           <%= image_tag 'no-image', size: "150x150", class: 'profile_image' %>
         <% end %>
@@ -59,7 +59,12 @@
 			<% @posts.each do |post| %>
         <div class="gallery-item" tabindex="0">
           <%= link_to post_path(post) do %>
-            <div class="gallery-image"><%= image_tag post.image, size: '285x285' %>
+            <div class="gallery-image">
+              <% if post.image.attached? %>
+                <%= image_tag post.image, size: '285x285' %>
+              <% else %>
+                <%= image_tag 'post-no-image.png', size: '285x285' %>
+              <% end %>
               <div class="gallery-item-info">
                 <ul>
                     <li class="gallery-item-likes text-light">

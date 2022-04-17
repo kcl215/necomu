@@ -3,7 +3,7 @@ class Public::CustomersController < ApplicationController
   def show
     @customer = Customer.find(params[:id])
     @cats = @customer.cats
-    @posts = @customer.posts
+    @posts = @customer.posts.page(params[:page]).per(9)
   end
 
   def edit
@@ -15,7 +15,7 @@ class Public::CustomersController < ApplicationController
     @customer.update(customer_params)
     redirect_to customer_path(current_customer)
   end
-  
+
   def favorites
     @customer = Customer.find(params[:id])
     favorites= Favorite.where(customer_id: @customer.id).pluck(:post_id)

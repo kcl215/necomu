@@ -10,6 +10,7 @@
     <!--fontawesome-->
     <script src="https://kit.fontawesome.com/9f57df5a0b.js" crossorigin="anonymous"></script>
   </head>
+
     <% unless current_page?(root_path) %>
       <header>
         <nav class="navbar navbar-expand-lg ">
@@ -22,9 +23,9 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav ml-auto text-center">
                 <% if customer_signed_in? %>
-                <div class="d-flex justify-content-center form-inline">
-                  <%= render 'public/searches/form' %>
-                </div>
+                  <div class="d-flex justify-content-center form-inline">
+                    <%= render 'public/searches/form' %>
+                  </div>
                   <%= link_to posts_path, class: 'nav-link text-cl' do %>
                     <i class="fas fa-list nav-fa"></i><div>タイムライン</div>
                   <% end %>
@@ -34,14 +35,21 @@
                   <%= link_to destroy_customer_session_path, class: 'nav-link text-cl', method: :delete do %>
                     <i class="fas fa-sign-out-alt nav-fa"></i><div>ログアウト</div>
                   <% end %>
-                    <%= link_to customer_path(current_customer), class: 'nav-link text-cl'  do %>
-                      <% if current_customer.profile_image.attached? %>
-                          <%= image_tag current_customer.profile_image, size: "35x35", class: "profile_image nav-profile_image" %>
-                        <% else %>
-                          <%= image_tag 'no-image.png', size: "35x35", class: 'profile_image nav-profile_image' %>
-                      <% end %>
-                      <div>マイページ</div>
+                  <%= link_to customer_path(current_customer), class: 'nav-link text-cl'  do %>
+                    <% if current_customer.profile_image.attached? %>
+                      <%= image_tag current_customer.profile_image, size: "35x35", class: "profile_image nav-profile_image" %>
+                    <% else %>
+                      <%= image_tag 'no-image.png', size: "35x35", class: 'profile_image nav-profile_image' %>
                     <% end %>
+                    <div>マイページ</div>
+                  <% end %>
+                <% elsif admin_signed_in? %>
+                  <%= link_to admin_customers_path, class: 'nav-link text-cl' do %>
+                    <i class="fas fa-users nav-fa"></i><div>会員一覧</div>
+                  <% end %>
+                  <%= link_to destroy_admin_session_path, class: 'nav-link text-cl', method: :delete do %>
+                    <i class="fas fa-sign-out-alt nav-fa"></i><div>ログアウト</div>
+                  <% end %>
                 <% end %>
              </ul>
           </div>

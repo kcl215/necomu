@@ -33,7 +33,7 @@ class Public::SessionsController < Devise::SessionsController
   end
 
   # protected
-  
+
     # 会員の論理削除のための記述（退会後は、同じアカウントでは利用できない）
 
   # If you have extra params to permit, append them to the sanitizer.

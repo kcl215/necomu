@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(version: 2022_04_05_101729) do
 
   create_table "cats", force: :cascade do |t|
     t.integer "customer_id"
-    t.string "cat_name"
-    t.integer "gender"
+    t.string "cat_name", null: false
+    t.integer "gender", null: false
     t.text "introduction"
     t.text "other"
     t.datetime "created_at", precision: 6, null: false
@@ -76,8 +76,8 @@ ActiveRecord::Schema.define(version: 2022_04_05_101729) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "name"
-    t.string "nickname"
+    t.string "name", null: false
+    t.string "nickname", null: false
     t.text "introduction"
     t.boolean "is_deleted", default: false
     t.datetime "created_at", precision: 6, null: false

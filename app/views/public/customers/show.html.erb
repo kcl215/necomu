@@ -42,7 +42,9 @@
   <div class="col-12">
     <h2>飼猫一覧</h2>
     <div class ="wrapper grid">
+      <% if current_customer == @customer %>
         <a class="cat-regist" href="/cats/new"><%= image_tag 'add.png', size: '100x100', class: "cat_image"%></a>
+      <% end %>
       <% @cats.each do |cat| %>
         <%= link_to cat_path(cat) do %>
           <%= image_tag cat.cat_image, size: '100x100', class: 'cat_image' %>

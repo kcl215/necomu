@@ -23,7 +23,13 @@
 
 
 ## 設計書
-<...>
+
+- ER図
+![cat_community_ER drawio](https://user-images.githubusercontent.com/98423401/163701754-ad596ebd-f3c8-430c-b8f9-ede1eda03d1a.png)
+
+- 画面遷移図
+![necomu_ui_flow_user drawio](https://user-images.githubusercontent.com/98423401/163701883-2f80d7d2-56f9-4c98-a176-74568be2218e.png)
+
 
 
 ## 開発環境
@@ -37,4 +43,4 @@
 ## 今後実装したい内容
 - DM機能
 - 動画投稿機能
-- レイアウト
+- 非同期通信化

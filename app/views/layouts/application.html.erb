@@ -9,7 +9,8 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!--fontawesome-->
     <script src="https://kit.fontawesome.com/9f57df5a0b.js" crossorigin="anonymous"></script>
-  </head>
+    <%= favicon_link_tag('favicon.ico') %>
+</head>
 
     <% unless current_page?(root_path) %>
       <header>

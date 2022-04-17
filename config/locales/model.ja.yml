@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    attributes:
+      customer:
+        name: ログインIDを
+        nickname: 名前
+        email: メールアドレス
+        password: パスワード

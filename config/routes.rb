@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  namespace :public do
+    get 'chats/show'
+  end
   devise_for :customers,skip: [:passwords], controllers: {
   registrations: "public/registrations",
   sessions: 'public/sessions'
@@ -14,6 +17,7 @@ Rails.application.routes.draw do
 
 
   scope module: :public do
+    resources :chats, only: [:show, :create]
     resources :posts, only: [:index, :show, :new, :create, :destroy] do
       resources :comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]

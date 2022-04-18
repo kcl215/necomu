@@ -29,9 +29,40 @@
           <% end %>
         </div>
       <% end %>
-    </div>
+      </div>
+
+      <div class="row">
+        <h3 class="p-3"><span class="header">タイムライン</span></h3>
+      </div>
+      <div class="gallery">
+        <% @follow_posts.each do |post| %>
+          <div class="gallery-item" tabindex="0">
+            <%= link_to post_path(post) do %>
+              <div class="gallery-image">
+                <% if post.image.attached? %>
+                  <%= image_tag post.image, size: '285x285' %>
+                <% else %>
+                  <%= image_tag 'post-no-image.png', size: '285x285' %>
+                <% end %>
+                <div class="gallery-item-info">
+                  <ul>
+                    <li class="gallery-item-likes text-light">
+                      <span class="visually-hidden">Likes:</span>
+                      <i class="fas fa-heart" aria-hidden="true" style="color: white;"></i><%= post.favorites.count %>
+                    </li>
+                    <li class="gallery-item-comments text-light">
+                      <span class="visually-hidden">Comments:</span>
+                      <i class="fas fa-comment" aria-hidden="true" style="color: white;"></i><%= post.comments.count %>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     <div class="row justify-content-center">
-      <%= paginate @posts %>
+      <%= paginate @follow_posts %>
     </div>
   </div>
 </main>

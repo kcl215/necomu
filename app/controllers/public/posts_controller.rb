@@ -1,7 +1,8 @@
 class Public::PostsController < ApplicationController
 before_action :authenticate_customer!
   def index
-    @posts = Post.order(created_at: :desc).page(params[:page])
+    @posts = Post.order(created_at: :desc).limit(6)
+    @follow_posts = Post.where(customer_id: [current_customer.id, *current_customer.following_ids]).order(created_at: :desc).page(params[:page])
   end
 
   def show

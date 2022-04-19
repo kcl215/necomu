@@ -8,9 +8,6 @@
       <% @chats.each do |chat| %>
         <% if chat.customer_id == current_customer.id %>
           <div class="balloon-color right">
-        <!--<figure class="icon-color"><img src="画像のパス" alt="代替えテキスト" >-->
-        <!--  <figcaption class="name-color">アイコンの名前</figcaption>-->
-        <!--</figure>-->
             <div class="chatting-color">
               <p class="text-color">
                 <%= chat.message %>
@@ -19,9 +16,6 @@
           </div>
         <% else %>
           <div class="balloon-color left">
-          <!--<figure class="icon-color"><img src="画像のパス" alt="代替えテキスト" >-->
-          <!--  <figcaption class="name-color">アイコンの名前</figcaption>-->
-          <!--</figure>-->
             <div class="chatting-color">
               <p class="text-color"><%= chat.message %></p>
             </div>

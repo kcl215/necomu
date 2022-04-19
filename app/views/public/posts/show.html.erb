@@ -5,7 +5,7 @@
         <%= image_tag @post.image.variant( resize: "690x500" ), class: 'post_image' %>
       <% else %>
         <%= image_tag 'post-no-image.png', size: '285x285' %>
-      <% end %>  
+      <% end %>
     </div>
     <div class = "col-5">
       <div class="post-profile">
@@ -18,9 +18,11 @@
             <% end %>
           <% end %>
         </div>
-        <div class="profile-user-settings">
-          <h3 class="profile-user-name"><%= @customer.nickname %></h3>
-          <span class="text-gray"><%= @customer.name %></span>
+        <div class="row">
+          <div class="profile-user-settings">
+            <h3 class="profile-user-name"><%= @customer.nickname %></h3>
+            <span class="h3 text-gray"><%= @customer.name %></span>
+          </div>
         </div>
         <div class="profile-bio">
           <p><div class="profile-real-name">

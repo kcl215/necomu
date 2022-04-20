@@ -23,9 +23,10 @@
 <% end %>
 			<div class="profile-stats">
 				<ul>
-					<li><span class="profile-stat-count"><%= @customer.posts.count %></span> posts</li>
-					<li><span class="profile-stat-count"><%= link_to @customer.followings.count, customer_followings_path(@customer) %></span> followers</li>
-					<li><span class="profile-stat-count"><%= link_to @customer.followers.count, customer_followers_path(@customer) %></span> following</li>
+					<li>投稿 <span class="profile-stat-count"><%= @customer.posts.count %></span> 件数</li>
+					
+					<li>フォロワー <span class="profile-stat-count"><%= link_to @customer.followers.count, customer_followers_path(@customer) %></span> 人</li>
+					<li>フォロー <span class="profile-stat-count"><%= link_to @customer.followings.count, customer_followings_path(@customer) %></span> 人</li>
 					<li><span class="profile-stat-count"><%=link_to favorites_customer_path(@customer) do %>
 					  </i><p class="text-cl">bookmark</p></span>
 					  <% end %>

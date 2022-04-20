@@ -1,30 +1,30 @@
 <h1 id="room" data-room="<%= @room.id %>" data-user="<%= current_customer.id %>">
-<div class="container-chat">
-<%= @customer.name %> さんとのチャット</h1></div>
+  <div class="container-chat">
+    <%= @customer.name %> さんとのチャット
+  </div>
+</h1>
 
-  <div class="box-chat">
-    <div>
-    <div class="message">
-      <% @chats.each do |chat| %>
-        <% if chat.customer_id == current_customer.id %>
-          <div class="balloon-color right">
-            <div class="chatting-color">
-              <p class="text-color">
-                <%= chat.message %>
-              </p>
-            </div>
+<div class="box-chat">
+  <div class="message">
+    <% @chats.each do |chat| %>
+      <% if chat.customer_id == current_customer.id %>
+        <div class="balloon-color right">
+          <div class="chatting-color">
+            <p class="text-color">
+              <%= chat.message %>
+            </p>
           </div>
-        <% else %>
-          <div class="balloon-color left">
-            <div class="chatting-color">
-              <p class="text-color"><%= chat.message %></p>
-            </div>
+        </div>
+      <% else %>
+        <div class="balloon-color left">
+          <div class="chatting-color">
+            <p class="text-color"><%= chat.message %></p>
           </div>
-        <% end %>
+        </div>
       <% end %>
-    </div>
+    <% end %>
   </div>
-  </div>
+</div>
 
 <div class="row">
   <div class="col-md-6 offset-md-3">
@@ -36,4 +36,4 @@
   </div>
 </div>
 
-</div>
+

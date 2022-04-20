@@ -3,7 +3,6 @@
     <% post.comments.each do |comment| %>
       <tr>
         <td class="text-center">
-
           <%= link_to customer_path(comment.customer) do %>
             <% if comment.customer.profile_image.attached? %>
               <%= image_tag comment.customer.profile_image, size: "50x50", class: "profile_image" %>

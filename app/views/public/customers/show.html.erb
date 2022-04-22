@@ -5,7 +5,7 @@
 				<% if @customer.profile_image.attached? %>
           <%= image_tag @customer.profile_image, size: '150x150', class: 'profile_image' %>
         <% else %>
-          <%= image_tag 'no-image', size: "150x150", class: 'profile_image' %>
+          <%= image_tag 'no-image.png', size: "150x150", class: 'profile_image' %>
         <% end %>
 			</div>
 			<div class="profile-user-settings">
@@ -24,7 +24,7 @@
 			<div class="profile-stats">
 				<ul>
 					<li>投稿 <span class="profile-stat-count"><%= @customer.posts.count %></span> 件数</li>
-					
+
 					<li>フォロワー <span class="profile-stat-count"><%= link_to @customer.followers.count, customer_followers_path(@customer) %></span> 人</li>
 					<li>フォロー <span class="profile-stat-count"><%= link_to @customer.followings.count, customer_followings_path(@customer) %></span> 人</li>
 					<li><span class="profile-stat-count"><%=link_to favorites_customer_path(@customer) do %>

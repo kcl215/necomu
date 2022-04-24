@@ -14,8 +14,10 @@ Rails.application.routes.draw do
 
   root to: "public/homes#top"
   get "search" => "public/searches#search"
-
-
+  devise_scope :customer do
+    # TIPS: ユーザー登録しっぱいのリダイレクトのエラーを防ぐ
+    get '/customers', to: 'public/registrations#new'
+  end
   scope module: :public do
     resources :chats, only: [:show, :create]
     resources :posts, only: [:index, :show, :new, :create, :destroy] do

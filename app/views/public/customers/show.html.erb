@@ -19,8 +19,8 @@
           <% end %>
 			</div>
 			<% if current_customer != @customer && current_customer.following?(@customer) && @customer.following?(current_customer) %>
-  <%= link_to 'chatを始める', chat_path(@customer.id), class: "ml-3" %>
-<% end %>
+        <%= link_to 'chatを始める', chat_path(@customer.id), class: "btn btn-chat ml-3" %>
+      <% end %>
 			<div class="profile-stats">
 				<ul>
 					<li>投稿 <span class="profile-stat-count"><%= @customer.posts.count %></span> 件数</li>

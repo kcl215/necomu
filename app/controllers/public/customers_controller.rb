@@ -23,7 +23,7 @@ before_action :authenticate_customer!
 
   def favorites
     @customer = Customer.find(params[:id])
-    favorites= Favorite.where(customer_id: @customer.id).pluck(:post_id)
+    favorites = Favorite.where(customer_id: @customer.id).pluck(:post_id)
     @favorite_posts = Post.find(favorites)
   end
 

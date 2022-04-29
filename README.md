@@ -25,10 +25,17 @@
 ## 設計書
 
 - ER図
-![cat_community_ER drawio](https://user-images.githubusercontent.com/98423401/163701754-ad596ebd-f3c8-430c-b8f9-ede1eda03d1a.png)
+![cat_community_ER drawio (1)](https://user-images.githubusercontent.com/98423401/165892120-7504a10a-4e14-44e7-a7d2-491451f98966.png)
 
 - 画面遷移図
 ![necomu_ui_flow_user drawio](https://user-images.githubusercontent.com/98423401/163701883-2f80d7d2-56f9-4c98-a176-74568be2218e.png)
+
+- テーブル定義書
+![necomu_テーブル提議書](https://user-images.githubusercontent.com/98423401/165892861-ea890c95-d506-4ad1-9ff5-db00547f993f.jpg)
+
+- アプリケーション詳細設計
+![necomu_アプリケーション詳細設計](https://user-images.githubusercontent.com/98423401/165892847-18884696-3f73-4cdd-a8e1-cb10421e070c.jpg)
+
 
 
 

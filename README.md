@@ -52,3 +52,10 @@
 - 非同期通信化
 - 通知機能
 - レイアウト
+
+## 使用素材
+- PAKUTASO
+https://www.pakutaso.com/
+
+- いらすとや
+https://www.irasutoya.com/

@@ -23,11 +23,11 @@
         </div>
         <div class= "ml-5">
         <%= f.radio_button :gender, Cat.genders.key(0), checked: "checked" %>
-        <%= f.label :gender, Cat.genders_i18n[:male] %>
+        <%= f.label :gender, Cat.genders_i18n[:male], value: :male %>
         <%= f.radio_button :gender, Cat.genders.key(1) %>
-        <%= f.label :gender, Cat.genders_i18n[:female] %>
+        <%= f.label :gender, Cat.genders_i18n[:female], value: :female %>
         <%= f.radio_button :gender, Cat.genders.key(2) %>
-        <%= f.label :gender, Cat.genders_i18n[:unclear] %>
+        <%= f.label :gender, Cat.genders_i18n[:unclear], value: :unclear %>
         </div>
       </div>
 

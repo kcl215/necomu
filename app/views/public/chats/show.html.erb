@@ -11,7 +11,8 @@
         <div class="balloon-color right">
           <div class="chatting-color">
             <p class="text-color">
-              <%= chat.message %>
+              <%= chat.message %><br>
+              <%= chat.created_at.strftime('%Y/%m/%d %H:%M') %>
             </p>
           </div>
         </div>
@@ -19,7 +20,8 @@
         <div class="balloon-color left">
           <div class="chatting-color">
             <p class="text-color">
-              <%= chat.message %>
+              <%= chat.message %><br>
+              <%= chat.created_at.strftime('%Y/%m/%d %H:%M') %>
             </p>
           </div>
         </div>
